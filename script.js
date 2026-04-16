@@ -44,3 +44,16 @@ searchBtn.addEventListener("click", () => {
 
 
 
+searchBtn.addEventListener("click", () => {
+  const searchValue = document.getElementById("searchInput").value.toLowerCase();
+  const styleValue = document.getElementById("styleFilter").value;
+
+  const filtered = artists.filter(artist => {
+    return (
+      artist.name.toLowerCase().includes(searchValue) &&
+      (styleValue === "" || artist.style === styleValue)
+    );
+  });
+
+  displayArtists(filtered);
+});
