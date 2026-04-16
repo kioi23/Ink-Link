@@ -73,3 +73,10 @@ async function fetchArtists() {
     console.error("Error fetching data:", error);
   }
 }
+
+async function fetchImages() {
+  const res = await fetch("https://api.unsplash.com/search/photos?query=tattoo&client_id=YOUR_KEY");
+  const data = await res.json();
+
+  displayImages(data.results);
+}
