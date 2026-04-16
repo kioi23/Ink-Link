@@ -57,3 +57,19 @@ searchBtn.addEventListener("click", () => {
 
   displayArtists(filtered);
 });
+
+async function fetchArtists() {
+  try {
+    const response = await fetch("https://api.yelp.com/v3/businesses/search?term=tattoo&location=Nairobi", {
+      headers: {
+        Authorization: "Bearer YOUR_API_KEY"
+      }
+    });
+
+    const data = await response.json();
+
+    return data.businesses;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
