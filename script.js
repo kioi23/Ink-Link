@@ -103,3 +103,7 @@ function analyzeReviews(reviews) {
   return summary;
 }
 
+document.getElementById("bookingForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Booking request sent!");
+});
