@@ -74,9 +74,18 @@ async function fetchArtists() {
   }
 }
 
+
 async function fetchImages() {
   const res = await fetch("https://api.unsplash.com/search/photos?query=tattoo&client_id=YOUR_KEY");
   const data = await res.json();
 
   displayImages(data.results);
 }
+
+
+function saveImage(url) {
+  let saved = JSON.parse(localStorage.getItem("saved")) || [];
+  saved.push(url);
+  localStorage.setItem("saved", JSON.stringify(saved));
+}
+
