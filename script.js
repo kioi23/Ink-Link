@@ -89,3 +89,16 @@ function saveImage(url) {
   localStorage.setItem("saved", JSON.stringify(saved));
 }
 
+function analyzeReviews(reviews) {
+  let summary = {
+    clean: 0,
+    professional: 0
+  };
+
+  reviews.forEach(r => {
+    if (r.text.includes("clean")) summary.clean++;
+    if (r.text.includes("professional")) summary.professional++;
+  });
+
+  return summary;
+}
