@@ -107,3 +107,8 @@ document.getElementById("bookingForm").addEventListener("submit", (e) => {
   e.preventDefault();
   alert("Booking request sent!");
 });
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  async defer>
+</script>
